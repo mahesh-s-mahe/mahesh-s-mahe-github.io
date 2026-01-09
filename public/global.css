@@ -631,6 +631,7 @@ p {
 @media (max-width: 768px) {
   .hero-body {
     flex-direction: column;
+    padding: 1rem;
   }
 
   .hero-text,
@@ -638,8 +639,13 @@ p {
     max-width: 100%;
   }
 
+  .hero-img img {
+    padding: none;
+  }
+
   .feature-grid {
     flex-direction: column;
+    padding: 1rem;
   }
 
   h1 {
