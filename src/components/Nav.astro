@@ -1,191 +1,261 @@
----
-import NavLink from './NavLink.astro';
----
-
 <nav class="navbar">
-  <div class="navbar-brand">
-    <a href="/">Your Logo</a>
-  </div>
+  <div class="nav-container">
+    <a href="/" class="logo">ROBO<span>KYN</span></a>
 
-  <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </button>
+    <button class="mobile-toggle" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-  <div class="navbar-links" id="navbarLinks">
-    <NavLink href="/" text="Home" />
-    <NavLink href="/about" text="About" />
-    <NavLink href="/services" text="Services" />
-    <NavLink href="/contact" text="Contact" />
+    <div class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="/" class="nav-item">Home</a></li>
+        <li><a href="/store" class="nav-item">Store</a></li>
+        <li><a href="/contact" class="nav-item">Contact</a></li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="/cart" class="nav-item">Cart</a>
+        <a href="#waitlist" class="btn-waitlist">Join the Waitlist</a>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </nav>
 
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggleButton = document.getElementById('navbarToggle');
-    const navLinks = document.getElementById('navbarLinks');
-    const body = document.body;
-
-    if (toggleButton && navLinks) {
-      toggleButton.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        toggleButton.classList.toggle('active');
-        body.classList.toggle('no-scroll');
-      });
-    }
-
-    // Optional: Close nav when a link is clicked
-    navLinks.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) {
-          navLinks.classList.remove('active');
-          toggleButton.classList.remove('active');
-          body.classList.remove('no-scroll');
-        }
-      });
-    });
+<script>
+  const themeToggle = document.querySelector('.theme-toggle');
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  // Theme toggle functionality
+  const getTheme = () => localStorage.getItem('theme') || 'light';
+  const setTheme = (theme: string) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  };
+  
+  // Initialize theme
+  setTheme(getTheme());
+  
+  themeToggle?.addEventListener('click', () => {
+    const currentTheme = getTheme();
+    setTheme(currentTheme === 'light' ? 'dark' : 'light');
+  });
+  
+  // Mobile menu toggle
+  mobileToggle?.addEventListener('click', () => {
+    navMenu?.classList.toggle('is-active');
   });
 </script>
 
 <style>
-  /* Universal box-sizing (highly recommended for all projects) */
-  html {
-    box-sizing: border-box;
-  }
-  *, *::before, *::after {
-    box-sizing: inherit;
-  }
-
-  body.no-scroll {
-    overflow: hidden;
+  .navbar {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-text), transparent 80%);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
   }
 
-  /* Reset default margins on body if not already done in a global CSS */
-  body {
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-orange);
+    transition: opacity 0.3s ease;
+  }
+
+  .logo:hover {
+    opacity: 0.8;
+  }
+
+  .logo span { 
+    color: var(--color-text); 
+    font-style: italic;
+  }
+
+  .nav-menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin-left: 3rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  .nav-item {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
     position: relative;
-    z-index: 1000;
   }
 
-  .navbar-brand a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
+  .nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-orange);
+    transition: width 0.3s ease;
   }
 
-  .navbar-links {
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+  .nav-item.active {
+    color: var(--color-orange);
+  }
+
+  .nav-item.active::after {
+    width: 100%;
+  }
+
+  .nav-actions {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.5rem;
   }
 
-  .navbar-toggle {
-    display: none;
-    background: none;
-    border: none;
+  .btn-waitlist {
+    white-space: nowrap; 
+    display: inline-block; 
+    width: auto;
+    padding: 12px 16px;
+    background-color: var(--color-orange);
+    color: var(--color-bg);
+    border-radius: 12px;
+    font-weight: bold;
     cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-  }
-
-  .navbar-toggle .icon-bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px 0;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .navbar-toggle.active .icon-bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .navbar-toggle.active .icon-bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar-toggle.active .icon-bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-
-  /* --- Responsive Styles --- */
-  @media (max-width: 768px) {
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      /* Right set to 0 and width 100% with padding inside for proper alignment */
-      right: 0;
-      width: 100%; /* Important: This means 100% of the viewport width */
-      height: 100vh;
-      background-color: #f8f9fa;
-      padding-top: 6rem; /* Make space for header, top:0 is covered by .navbar */
-      padding-left: 2rem; /* Add consistent left padding */
-      padding-right: 2rem; /* Add consistent right padding */
-      padding-bottom: 2rem;
-      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
-      align-items: flex-start;
-      gap: 1.5rem;
-      z-index: 999;
-      overflow-y: auto;
-    }
-
-    .navbar-links.active {
-      display: flex;
-      transform: translateX(0);
-    }
-
-    .navbar-toggle {
-      display: block;
-    }
-
-    .navbar-brand {
-      z-index: 1002;
-    }
-
-    /* Adjust the main navbar for mobile if needed, especially if it has horizontal padding */
-    .navbar {
-      padding-left: 1rem; /* Reduce padding on the main bar if it feels too wide */
-      padding-right: 1rem;
-    }
-  }
-</style>
-
-<style>
-  /* Styles for NavLink.astro */
-  /* This style block should ideally be within NavLink.astro itself,
-     but for completeness in one file for troubleshooting, it's here. */
-  .nav-link {
-    color: #333;
     text-decoration: none;
-    padding: 0.5rem 1rem; /* Keep initial padding for hover effect */
-    transition: color 0.2s ease-in-out;
-    font-size: 1.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .nav-link:hover {
-    color: #007bff;
+  .btn-waitlist:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-orange), transparent 60%);
+  }
+
+  .btn-waitlist:active {
+    transform: translateY(0);
+  }
+
+  .theme-toggle {
+    background: none;
+    border: 1px solid color-mix(in srgb, var(--color-text), transparent 80%);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+  }
+
+  .theme-toggle:hover {
+    background-color: color-mix(in srgb, var(--color-text), transparent 90%);
+    border-color: var(--color-orange);
+  }
+
+  .sun-icon,
+  .moon-icon {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  :root[data-theme="light"] .moon-icon,
+  :root[data-theme="dark"] .sun-icon {
+    display: none;
+  }
+
+  .mobile-toggle { 
+    display: none; 
+    cursor: pointer; 
+    background: none; 
+    border: none; 
+  }
+
+  .bar { 
+    display: block; 
+    width: 25px; 
+    height: 3px; 
+    margin: 5px 0; 
+    background-color: var(--color-text); 
+    transition: 0.3s; 
   }
 
   @media (max-width: 768px) {
-    .nav-link {
-      width: 100%; /* Make links take full width of the menu *content area* */
-      padding: 1rem 0; /* Adjust padding for mobile links, no horizontal padding here */
+    .mobile-toggle { display: block; }
+    
+    .nav-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      background-color: var(--color-bg);
+      width: 100%;
+      gap: 1.5rem;
+      padding: 2rem;
+      margin: 0;
+      clip-path: circle(0% at 100% 0%);
+      transition: clip-path 0.5s ease-in-out;
+    }
+
+    .nav-menu.is-active { 
+      clip-path: circle(150% at 100% 0%); 
+    }
+
+    .nav-links { 
+      flex-direction: column; 
+      align-items: center; 
+    }
+
+    .nav-actions { 
+      flex-direction: column; 
+      width: 100%; 
+      text-align: center; 
     }
   }
 </style>

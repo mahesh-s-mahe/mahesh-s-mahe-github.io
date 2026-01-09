@@ -1,218 +1,299 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	
-  <main class="mahesh-main">
-	<section class="hero-section">
-	  <div class="hero-content-wrapper">
-		<div class="hero-text-content">
-		  <h1 class="hero-name">
-			Mahesh
-		  </h1>
-		  <p class="hero-title">
-			Prototyping Engineer
-		  </p>
-		  <p class="hero-bio">
-			Mahesh is a highly innovative Prototyping Engineer with a passion for bringing complex ideas to life through rapid iteration and hands-on development. With a keen eye for detail and a knack for problem-solving, he specializes in bridging the gap between concept and tangible product, driving projects from initial sketch to functional prototype. His work often involves a blend of hardware, software, and user experience design, making him a versatile asset in dynamic R&D environments.
-		  </p>
-		</div>
-	  </div>
-	  <svg class="hero-bg-svg" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-		<path fill="#ffffff" fill-opacity="0.1" d="M0,224L48,208C96,192,192,160,288,165.3C384,171,480,213,576,213.3C672,213,768,171,864,165.3C960,160,1056,192,1152,208C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-	  </svg>
-	</section>
-   
-	<section class="projects-section">
-	  <h2 class="section-title">Featured Projects</h2>
-	  <div class="projects-grid">
-		<a href="#" class="project-card">
-		  <div class="project-image-wrapper">
-			<img
-			  src="/images/projects/project-smarthome.jpg"
-			  alt="Smart Home Automation System"
-			  class="project-image"
-			  onerror="this.onerror=null;this.src='https://placehold.co/600x337/cccccc/333333?text=Smart+Home';"
-			/>
-		  </div>
-		  <div class="project-details">
-			<h3 class="project-title">Smart Home Automation System</h3>
-			<p class="project-description">Developed a prototype for an AI-powered smart home hub integrating various IoT devices for seamless control.</p>
-		  </div>
-		</a>
-		<a href="#" class="project-card">
-		  <div class="project-image-wrapper">
-			<img
-			  src="/images/projects/project-wearable.jpg"
-			  alt="Wearable Health Monitor"
-			  class="project-image"
-			  onerror="this.onerror=null;this.src='https://placehold.co/600x337/cccccc/333333?text=Wearable';"
-			/>
-		  </div>
-		  <div class="project-details">
-			<h3 class="project-title">Wearable Health Monitor</h3>
-			<p class="project-description">Designed and built a wearable device prototype for continuous vital sign monitoring and data visualization.</p>
-		  </div>
-		</a>
-		<a href="#" class="project-card">
-		  <div class="project-image-wrapper">
-			<img
-			  src="/images/projects/project-robot.jpg"
-			  alt="Robotic Arm for Precision Assembly"
-			  class="project-image"
-			  onerror="this.onerror=null;this.src='https://placehold.co/600x337/cccccc/333333?text=Robotic+Arm';"
-			/>
-		  </div>
-		  <div class="project-details">
-			<h3 class="project-title">Robotic Arm for Precision Assembly</h3>
-			<p class="project-description">Engineered a proof-of-concept robotic arm with advanced kinematics for small-scale industrial assembly tasks.</p>
-		  </div>
-		</a>
-		<a href="#" class="project-card">
-		  <div class="project-image-wrapper">
-			<img
-			  src="/images/projects/project-ar.jpg"
-			  alt="AR-Assisted Training Platform"
-			  class="project-image"
-			  onerror="this.onerror=null;this.src='https://placehold.co/600x337/cccccc/333333?text=AR+Training';"
-			/>
-		  </div>
-		  <div class="project-details">
-			<h3 class="project-title">AR-Assisted Training Platform</h3>
-			<p class="project-description">Created an augmented reality prototype to provide interactive overlay instructions for complex machinery training.</p>
-		  </div>
-		</a>
-	  </div>
-	  <div class="projects-button-container">
-		<a
-		  href="#"
-		  class="view-more-button"
-		>
-		  View More Projects
-		</a>
-	  </div>
-	</section>
-   
-	<section class="experience-section">
-	  <div class="section-container">
-		<h2 class="section-title">Work Experience</h2>
-		<div class="timeline-container">
-		  <div class="timeline-line"></div>
-   
-		  <div class="timeline-item timeline-item-left">
-			<div class="timeline-content">
-			  <h3 class="timeline-title">Senior Prototyping Engineer</h3>
-			  <p class="timeline-company">InnovateX Labs</p>
-			  <p class="timeline-duration">Jan 2022 - Present</p>
-			  <p class="timeline-description">Leading a team of engineers in developing cutting-edge prototypes for various industries, focusing on IoT and AI integration. Responsible for full lifecycle from concept to validation.</p>
-			  <div class="timeline-arrow"></div>
+	<!-- 1. Hero Section -->
+	<section class="hero mw">
+		<div class="container hero-body">
+			<div class="hero-text">
+				<h1>Hi it's Mahesh</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt malesuada imperdiet. In a velit consequat, gravida elit in, ullamcorper urna.</p>
 			</div>
-			<div class="timeline-dot"></div>
-		  </div>
-   
-		  <div class="timeline-item timeline-item-right">
-			<div class="timeline-content">
-			  <h3 class="timeline-title">Prototyping Engineer</h3>
-			  <p class="timeline-company">Tech Solutions Inc.</p>
-			  <p class="timeline-duration">Aug 2018 - Dec 2021</p>
-			  <p class="timeline-description">Designed and built functional prototypes for consumer electronics, improving time-to-market by 20% through efficient iteration cycles.</p>
-			  <div class="timeline-arrow"></div>
+			
+			<div class="hero-image">
+				<img src="img1.png" alt="Mahesh - Robotics Engineer">
 			</div>
-			<div class="timeline-dot"></div>
-		  </div>
-   
-		  <div class="timeline-item timeline-item-left">
-			<div class="timeline-content">
-			  <h3 class="timeline-title">Junior Hardware Developer</h3>
-			  <p class="timeline-company">Circuit Innovations</p>
-			  <p class="timeline-duration">May 2016 - Jul 2018</p>
-			  <p class="timeline-description">Assisted in circuit board design and assembly for various electronic products, gaining hands-on experience in rapid prototyping techniques.</p>
-			  <div class="timeline-arrow"></div>
+		</div>
+
+		<div class="feature-grid-wrapper">
+			<div class="container feature-grid">
+				<div class="feature-card">
+					<h3 class="text-orange">maheshwaran</h3>
+					<p>Exceptional torque output with minimal backlash for precise robotic control.</p>
+				</div>
+
+				<div class="feature-card">
+					<h3 class="text-orange">Compact Design</h3>
+					<p>Ultra-small footprint without compromise. Engineered to fit where other gearboxes can't.</p>
+				</div>
+
+				<div class="feature-card">
+					<h3 class="text-orange">Smooth Operation</h3>
+					<p>CNC machined Delrin and aluminium construction deliver whisper-quiet rotation.</p>
+				</div>
 			</div>
-			<div class="timeline-dot"></div>
-		  </div>
 		</div>
-	  </div>
 	</section>
-   
-	<section class="articles-section">
-	  <h2 class="section-title">Published Articles</h2>
-	  <div class="articles-grid">
-		<a href="https://example.com/article1" target="_blank" rel="noopener noreferrer" class="article-card">
-		  <div class="article-details">
-			<h3 class="article-title">The Future of Prototyping in AI Development</h3>
-			<p class="article-meta">
-			  <span class="article-publication">Tech Innovator Magazine</span> &bull; March 15, 2024
-			</p>
-			<p class="article-link-text">
-			  Read Article
-			  <svg class="article-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-			</p>
-		  </div>
-		</a>
-		<a href="https://example.com/article2" target="_blank" rel="noopener noreferrer" class="article-card">
-		  <div class="article-details">
-			<h3 class="article-title">Bridging the Gap: From Concept to Consumer Product</h3>
-			<p class="article-meta">
-			  <span class="article-publication">Engineering Insights Journal</span> &bull; November 20, 2023
-			</p>
-			<p class="article-link-text">
-			  Read Article
-			  <svg class="article-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-			</p>
-		  </div>
-		</a>
-		<a href="https://example.com/article3" target="_blank" rel="noopener noreferrer" class="article-card">
-		  <div class="article-details">
-			<h3 class="article-title">Rapid Iteration Techniques for Hardware Startups</h3>
-			<p class="article-meta">
-			  <span class="article-publication">Prototype Quarterly</span> &bull; July 10, 2023
-			</p>
-			<p class="article-link-text">
-			  Read Article
-			  <svg class="article-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-			</p>
-		  </div>
-		</a>
-	  </div>
-	</section>
-   
-	<footer class="main-footer">
-	  <div class="footer-content">
-		<p class="footer-description">
-		  Connecting ideas with reality. Mahesh is a Prototyping Engineer dedicated to innovation and practical solutions.
-		</p>
-		<div class="footer-links">
-		  <a
-			href="mailto:mahesh@example.com"
-			class="footer-link footer-email"
-			aria-label="Email Mahesh"
-		  >
-			<svg class="footer-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-			mahesh@example.com
-		  </a>
-		  <a href="https://linkedin.com/in/mahesh" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Mahesh's LinkedIn">
-			<svg class="footer-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.3 14.8c-.8 0-1.4.3-1.9.8-.5.5-.8 1.2-.8 2 0 .8.3 1.5.8 2 .5.5 1.1.8 1.9.8.8 0 1.4-.3 1.9-.8.5-.5.8-1.2.8-2 0-.8-.3-1.5-.8-2-.5-.5-1.1-.8-1.9-.8zM19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8 8h3v10H8V8zm-1.5-2.5c-.8 0-1.5-.7-1.5-1.5S5.7 2.5 6.5 2.5 8 3.2 8 4s-.7 1.5-1.5 1.5zM19 19H13v-4.5c0-.8-.3-1.5-.8-2s-1.1-.8-1.9-.8c-.8 0-1.4.3-1.9.8-.5.5-.8 1.2-.8 2V19H8V8h3v1.5c.5-.5 1.1-.8 1.9-.8.8 0 1.5.3 2 .8.5.5.8 1.2.8 2V19z"/></svg>
-			LinkedIn
-		  </a>
-		  <a href="https://github.com/mahesh" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Mahesh's GitHub">
-			<svg class="footer-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.419 2.865 8.165 6.839 9.488.499.09.679-.217.679-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.087 2.903.829.091-.64.359-1.087.653-1.337-2.22-.253-4.555-1.116-4.555-4.949 0-1.092.39-1.983 1.029-2.675-.103-.253-.446-1.266.098-2.642 0 0 .84-.268 2.75 1.025A9.724 9.724 0 0112 5.05c.85.004 1.705.115 2.504.337 1.909-1.293 2.747-1.025 2.747-1.025.546 1.376.202 2.389.099 2.642.64.692 1.029 1.583 1.029 2.675 0 3.842-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.337-.012 2.419-.012 2.747 0 .268.18.579.684.482C19.136 20.166 22 16.419 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
-			GitHub
-		  </a>
-		  <a href="https://twitter.com/mahesh" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="Mahesh's Twitter">
-			<svg class="footer-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.007-.532A8.318 8.318 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.417-4.293 4.106 4.106 0 001.27 5.477A4.09 4.09 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.844c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.007-.532A8.318 8.318 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.417-4.293 4.106 4.106 0 001.27 5.477A4.09 4.09 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.844z"/></svg>
-			Twitter
-		  </a>
+ 
+	<!-- 2. Product Showcase -->
+	<section class="product-section mw">
+		<header class="section-header">
+			<span class="badge">Drive Comparison</span>
+			<h1>Choose the <span class="text-orange">Perfect Micro Drive</span></h1>
+			<p class="subtitle">Compare our three micro drive systems to find the ideal solution for your robotics project. Each drive is optimized for different applications and performance requirements.</p>
+			<p class="specs-note">All drives share the same compact dimensions: 42×42×26mm</p>
+		</header>
+
+		<div class="tabs-container">
+			<button class="tab active" data-tab="overview">Overview</button>
+			<button class="tab" data-tab="specs">Detailed Specs</button>
+			<button class="tab" data-tab="cases">Use Cases</button>
 		</div>
-		<p class="text-sm opacity-70">
-		  &copy; {new Date().getFullYear()} Mahesh. All rights reserved.
-		</p>
-	  </div>
-	</footer>
-  </main>
+
+		<div class="product-grid">
+			<article class="product-card">
+				<div class="img-wrapper">
+					<img src="https://via.placeholder.com/150" alt="Micro Cycloidal Drive">
+				</div>
+				<h3>20:1 Micro Cycloidal Drive</h3>
+				<p class="tagline">Pocket Rocket</p>
+				<span class="status-badge blue">High Efficiency</span>
+				<div class="price">₹1895 <span>RS</span></div>
+
+				<div class="specs-table">
+					<h4>Key Specifications</h4>
+					<div class="spec-row"><span>Weight</span><strong>55g</strong></div>
+					<div class="spec-row"><span>Rated Torque</span><strong>4-5Nm</strong></div>
+				</div>
+
+				<div class="best-for">
+					<h4>Best For</h4>
+					<p>Educational projects, pick-&-place robots, light weight automation tasks</p>
+				</div>
+
+				<div class="card-actions">
+					<button class="btn-primary success">Added to Cart</button>
+					<button class="btn-secondary">View Details</button>
+				</div>
+			</article>
+
+			<article class="product-card">
+				<div class="img-wrapper">
+					<img src="https://via.placeholder.com/150" alt="Micro Harmonic Drive">
+				</div>
+				<h3>26:1 Micro Harmonic Drive</h3>
+				<p class="tagline">Compact Precision</p>
+				<span class="status-badge orange">Best Seller</span>
+				<div class="price">₹1895 <span>RS</span></div>
+
+				<div class="specs-table">
+					<h4>Key Specifications</h4>
+					<div class="spec-row"><span>Weight</span><strong>45g</strong></div>
+					<div class="spec-row"><span>Rated Torque</span><strong>3-4Nm</strong></div>
+				</div>
+
+				<div class="best-for">
+					<h4>Best For</h4>
+					<p>Precision robotic joints, educational projects, high-accuracy automation</p>
+				</div>
+
+				<div class="card-actions">
+					<button class="btn-primary">Add to Cart</button>
+					<button class="btn-secondary">View Details</button>
+				</div>
+			</article>
+
+			<article class="product-card">
+				<div class="img-wrapper">
+					<img src="https://via.placeholder.com/150" alt="Micro Lotus Drive">
+				</div>
+				<h3>8:1 Micro Lotus Drive</h3>
+				<p class="tagline">Smooth & Efficient</p>
+				<span class="status-badge green">High Speed</span>
+				<div class="price">₹1895 <span>RS</span></div>
+
+				<div class="specs-table">
+					<h4>Key Specifications</h4>
+					<div class="spec-row"><span>Weight</span><strong>45g</strong></div>
+					<div class="spec-row"><span>Rated Torque</span><strong>3-4Nm</strong></div>
+				</div>
+
+				<div class="best-for">
+					<h4>Best For</h4>
+					<p>High-speed automation, camera gimbals, fast positioning systems</p>
+				</div>
+
+				<div class="card-actions">
+					<button class="btn-primary">Add to Cart</button>
+					<button class="btn-secondary">View Details</button>
+				</div>
+			</article>
+		</div>
+
+		<div class="footer-link">
+			<a href="/store">View All Products →</a>
+		</div>
+	</section>
+
+	<!-- 3. Technical Specifications -->
+	<section class="tech-specs-section mw">
+		<header class="section-header">
+			<span class="badge">Engineering</span>
+			<h1>Technical <span class="text-orange">Specifications</span></h1>
+			<p class="subtitle">Precision-engineered components designed for professional robotics applications.</p>
+		</header>
+
+		<div class="specs-grid">
+			<div class="spec-category">
+				<div class="spec-icon">
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<circle cx="12" cy="12" r="10"></circle>
+						<path d="M12 6v6l4 2"></path>
+					</svg>
+				</div>
+				<h3>Performance</h3>
+				<ul class="spec-list">
+					<li><strong>Efficiency:</strong> Up to 85%</li>
+					<li><strong>Backlash:</strong> Less than 1 arcmin</li>
+					<li><strong>Max Speed:</strong> 200 RPM</li>
+					<li><strong>Operating Temp:</strong> -20°C to 80°C</li>
+				</ul>
+			</div>
+
+			<div class="spec-category">
+				<div class="spec-icon">
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<rect x="3" y="3" width="18" height="18" rx="2"></rect>
+						<path d="M3 9h18M9 21V9"></path>
+					</svg>
+				</div>
+				<h3>Dimensions</h3>
+				<ul class="spec-list">
+					<li><strong>Size:</strong> 42 × 42 × 26mm</li>
+					<li><strong>Weight:</strong> 45-55g</li>
+					<li><strong>Mounting:</strong> M3 bolt pattern</li>
+					<li><strong>Shaft:</strong> 6mm D-shaft output</li>
+				</ul>
+			</div>
+
+			<div class="spec-category">
+				<div class="spec-icon">
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+					</svg>
+				</div>
+				<h3>Materials</h3>
+				<ul class="spec-list">
+					<li><strong>Housing:</strong> 6061-T6 Aluminium</li>
+					<li><strong>Gears:</strong> CNC Delrin/Steel</li>
+					<li><strong>Bearings:</strong> Precision ball bearings</li>
+					<li><strong>Finish:</strong> Anodized coating</li>
+				</ul>
+			</div>
+
+			<div class="spec-category">
+				<div class="spec-icon">
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+					</svg>
+				</div>
+				<h3>Electrical</h3>
+				<ul class="spec-list">
+					<li><strong>Motor Type:</strong> BLDC compatible</li>
+					<li><strong>Voltage:</strong> 12-24V DC</li>
+					<li><strong>Current Draw:</strong> 2-5A peak</li>
+					<li><strong>Encoder:</strong> Optional AS5600</li>
+				</ul>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- 4. Why Choose Us -->
+	<section class="why-choose-section mw">
+		<header class="section-header">
+			<span class="badge">Our Promise</span>
+			<h1>Why Choose <span class="text-orange">ROBOKYN</span></h1>
+			<p class="subtitle">Built by engineers, for engineers. We understand the challenges of modern robotics.</p>
+		</header>
+
+		<div class="benefits-grid">
+			<div class="benefit-card">
+				<div class="benefit-number">01</div>
+				<h3>Precision Engineering</h3>
+				<p>Every component is CNC machined to tolerances under 0.01mm, ensuring consistent performance and minimal backlash across all units.</p>
+			</div>
+
+			<div class="benefit-card">
+				<div class="benefit-number">02</div>
+				<h3>Open Source Friendly</h3>
+				<p>Full CAD files, assembly instructions, and integration guides available. Build on our designs or integrate seamlessly with your projects.</p>
+			</div>
+
+			<div class="benefit-card">
+				<div class="benefit-number">03</div>
+				<h3>Tested & Proven</h3>
+				<p>Each drive undergoes rigorous quality testing including load testing, efficiency measurements, and thermal cycling before shipping.</p>
+			</div>
+
+			<div class="benefit-card">
+				<div class="benefit-number">04</div>
+				<h3>Community Support</h3>
+				<p>Join our active community of robotics engineers. Get help, share projects, and collaborate with fellow builders worldwide.</p>
+			</div>
+
+			<div class="benefit-card">
+				<div class="benefit-number">05</div>
+				<h3>Fast Shipping</h3>
+				<p>In-stock items ship within 24 hours. We maintain local inventory to ensure you get your components when you need them.</p>
+			</div>
+
+			<div class="benefit-card">
+				<div class="benefit-number">06</div>
+				<h3>Lifetime Support</h3>
+				<p>Technical support doesn't end at purchase. We're here to help with integration, troubleshooting, and optimization throughout your project.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 5. Waitlist -->
+	<section class="newsletter-section mw" id="waitlist">
+		<div class="newsletter-container">
+			<div class="newsletter-content">
+				<span class="badge">Stay Updated</span>
+				<h2>Join the <span class="text-orange">Waitlist</span></h2>
+				<p>Be the first to know about new products, restocks, and exclusive offers. Get early access to limited edition drives.</p>
+			</div>
+
+			<form class="newsletter-form">
+				<div class="form-group">
+					<input type="text" placeholder="Your Name" required class="form-input">
+					<input type="email" placeholder="Email Address" required class="form-input">
+				</div>
+				<button type="submit" class="btn-submit">Join Waitlist</button>
+			</form>
+
+			<p class="privacy-note">We respect your privacy. Unsubscribe at any time.</p>
+		</div>
+	</section>
 </Layout>
+
+<script>
+	// Tab switching functionality
+	const tabs = document.querySelectorAll('.tab');
+	tabs.forEach(tab => {
+		tab.addEventListener('click', () => {
+			tabs.forEach(t => t.classList.remove('active'));
+			tab.classList.add('active');
+		});
+	});
+
+	// Newsletter form submission
+	const form = document.querySelector('.newsletter-form') as HTMLFormElement;
+	form?.addEventListener('submit', (e) => {
+		e.preventDefault();
+		alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
+		form.reset();
+	});
+</script>
