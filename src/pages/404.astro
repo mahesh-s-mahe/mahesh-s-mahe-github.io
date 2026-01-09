@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="error-section">
+    <div class="error-container">
+      <div class="error-content">
+        <h1 class="error-code">404</h1>
+        <h2>Page Not Found</h2>
+        <p>Oops! The page you're looking for doesn't exist. It might have been moved or deleted.</p>
+        
+        <div class="error-actions">
+          <a href="/" class="btn-primary">Go Home</a>
+          <a href="/store" class="btn-secondary">Browse Store</a>
+        </div>
+
+        <div class="suggestions">
+          <h3>You might be interested in:</h3>
+          <ul class="suggestion-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/store">Store</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="error-illustration">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="80" fill="none" stroke="var(--color-orange)" stroke-width="4" opacity="0.2"/>
+          <circle cx="100" cy="100" r="60" fill="none" stroke="var(--color-orange)" stroke-width="3" opacity="0.3"/>
+          <circle cx="100" cy="100" r="40" fill="none" stroke="var(--color-orange)" stroke-width="2" opacity="0.4"/>
+          <path d="M 70 85 Q 100 105 130 85" stroke="var(--color-text)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="75" cy="75" r="5" fill="var(--color-text)"/>
+          <circle cx="125" cy="75" r="5" fill="var(--color-text)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .error-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .error-container {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .error-content {
+    text-align: left;
+  }
+
+  .error-code {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--color-orange);
+    margin: 0;
+    line-height: 1;
+    animation: fadeInUp 0.6s ease;
+  }
+
+  .error-content h2 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    animation: fadeInUp 0.6s ease 0.1s both;
+  }
+
+  .error-content > p {
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    animation: fadeInUp 0.6s ease 0.2s both;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 0.6s ease 0.3s both;
+  }
+
+  .suggestions {
+    animation: fadeInUp 0.6s ease 0.4s both;
+  }
+
+  .suggestions h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .suggestion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .suggestion-list a {
+    color: var(--color-orange);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+  }
+
+  .suggestion-list a:hover {
+    opacity: 0.7;
+  }
+
+  .error-illustration {
+    animation: fadeInUp 0.6s ease 0.5s both;
+  }
+
+  .error-illustration svg {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .error-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .error-content {
+      text-align: center;
+    }
+
+    .error-code {
+      font-size: 4rem;
+    }
+
+    .error-actions {
+      flex-direction: column;
+    }
+
+    .error-actions a {
+      width: 100%;
+    }
+
+    .suggestion-list {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+</style>
